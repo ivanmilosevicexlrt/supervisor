@@ -13,7 +13,7 @@ var hostname = os.hostname();
 
 const app = express();
 app.get('/', (req, res) => {
-  res.send("Hello from:" + hostname);
+  res.send("Hello from:"  + "\n" + hostname + "\nport:" + `\n${PORT}`);
 });
 
 app.listen(PORT, HOST);

@@ -9,6 +9,11 @@ COPY node/node443 /var/www/nodeapp443/
 COPY node/node4000 /var/www/nodeapp4000/
 COPY node/node5000 /var/www/nodeapp5000/
 
+COPY bind/named.conf.options /etc/bind/
+COPY bind/named.conf.local /etc/bind/
+COPY bind/db.example.com /etc/bind/zones/
+COPY bind/bind9 /etc/default/bind9
+
 COPY supervisord.conf /etc/supervisor/conf.d/supervisord.conf
 EXPOSE 80 443 4000 5000 53/tcp 53/udp
 CMD ["/usr/bin/supervisord"]
